@@ -11,6 +11,7 @@
 		290F464F1952218100C38EC8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290F464E1952218100C38EC8 /* AppDelegate.swift */; };
 		290F46511952218100C38EC8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 290F46501952218100C38EC8 /* Images.xcassets */; };
 		290F465D1952218100C38EC8 /* WatParkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290F465C1952218100C38EC8 /* WatParkTests.swift */; };
+		B07484C219522957001C8B69 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B07484C119522957001C8B69 /* Crashlytics.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +34,7 @@
 		290F465C1952218100C38EC8 /* WatParkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatParkTests.swift; sourceTree = "<group>"; };
 		2964CFBA195223E20013FC2A /* WatPark-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WatPark-Bridging-Header.h"; sourceTree = "<group>"; };
 		98F84DE7C2C64BD6AB348FD0 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		B07484C119522957001C8B69 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		CCD8F8B67F36499980BAAD05 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -41,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B07484C219522957001C8B69 /* Crashlytics.framework in Frameworks */,
 				24B0212B90F64BBA843977D3 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -114,6 +117,7 @@
 		D8CB04ED94A5473ABCBFB193 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B07484C119522957001C8B69 /* Crashlytics.framework */,
 				CCD8F8B67F36499980BAAD05 /* libPods.a */,
 			);
 			name = Frameworks;
@@ -131,6 +135,7 @@
 				290F46461952218100C38EC8 /* Frameworks */,
 				290F46471952218100C38EC8 /* Resources */,
 				26D19BB63262430C89DC0693 /* Copy Pods Resources */,
+				B07484C0195228E7001C8B69 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -243,6 +248,19 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
+		};
+		B07484C0195228E7001C8B69 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Crashlytics.framework/run 7f2ba3940b86c9a42fb1141a4091dd56d415b01b 056446340bac2817b819cfa7aafea2083aaa9ef73a47881e5adf9aaef0261fcf";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -359,6 +377,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = WatPark/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -372,6 +394,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = WatPark/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

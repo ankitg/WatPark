@@ -18,6 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         // Override point for customization after application launch.
         self.window!.backgroundColor = UIColor.whiteColor()
+        
+        Crashlytics.startWithAPIKey("7f2ba3940b86c9a42fb1141a4091dd56d415b01b")
+        
         self.window!.makeKeyAndVisible()
         return true
     }
