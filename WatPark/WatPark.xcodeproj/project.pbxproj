@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		24B0212B90F64BBA843977D3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CCD8F8B67F36499980BAAD05 /* libPods.a */; };
 		290F464F1952218100C38EC8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290F464E1952218100C38EC8 /* AppDelegate.swift */; };
 		290F46511952218100C38EC8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 290F46501952218100C38EC8 /* Images.xcassets */; };
 		290F465D1952218100C38EC8 /* WatParkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290F465C1952218100C38EC8 /* WatParkTests.swift */; };
@@ -30,6 +31,9 @@
 		290F46561952218100C38EC8 /* WatParkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WatParkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		290F465B1952218100C38EC8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		290F465C1952218100C38EC8 /* WatParkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatParkTests.swift; sourceTree = "<group>"; };
+		2964CFBA195223E20013FC2A /* WatPark-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WatPark-Bridging-Header.h"; sourceTree = "<group>"; };
+		98F84DE7C2C64BD6AB348FD0 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		CCD8F8B67F36499980BAAD05 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24B0212B90F64BBA843977D3 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +61,8 @@
 				290F464B1952218100C38EC8 /* WatPark */,
 				290F46591952218100C38EC8 /* WatParkTests */,
 				290F464A1952218100C38EC8 /* Products */,
+				98F84DE7C2C64BD6AB348FD0 /* Pods.xcconfig */,
+				D8CB04ED94A5473ABCBFB193 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,6 +78,7 @@
 		290F464B1952218100C38EC8 /* WatPark */ = {
 			isa = PBXGroup;
 			children = (
+				2964CFBA195223E20013FC2A /* WatPark-Bridging-Header.h */,
 				290F464E1952218100C38EC8 /* AppDelegate.swift */,
 				290F46501952218100C38EC8 /* Images.xcassets */,
 				290F464C1952218100C38EC8 /* Supporting Files */,
@@ -103,6 +111,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		D8CB04ED94A5473ABCBFB193 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CCD8F8B67F36499980BAAD05 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -110,9 +126,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 290F46601952218100C38EC8 /* Build configuration list for PBXNativeTarget "WatPark" */;
 			buildPhases = (
+				9C36395F5ED44A708970ED93 /* Check Pods Manifest.lock */,
 				290F46451952218100C38EC8 /* Sources */,
 				290F46461952218100C38EC8 /* Frameworks */,
 				290F46471952218100C38EC8 /* Resources */,
+				26D19BB63262430C89DC0693 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -194,6 +212,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		26D19BB63262430C89DC0693 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9C36395F5ED44A708970ED93 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		290F46451952218100C38EC8 /* Sources */ = {
@@ -304,23 +355,27 @@
 		};
 		290F46611952218100C38EC8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 98F84DE7C2C64BD6AB348FD0 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = WatPark/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "WatPark/WatPark-Bridging-Header.h";
 			};
 			name = Debug;
 		};
 		290F46621952218100C38EC8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 98F84DE7C2C64BD6AB348FD0 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = WatPark/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "WatPark/WatPark-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -379,6 +434,7 @@
 				290F46621952218100C38EC8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		290F46631952218100C38EC8 /* Build configuration list for PBXNativeTarget "WatParkTests" */ = {
 			isa = XCConfigurationList;
@@ -387,6 +443,7 @@
 				290F46651952218100C38EC8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
